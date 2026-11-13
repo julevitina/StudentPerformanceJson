@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="StudentPerformanceJson.Views.EditStudentPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Student">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="12">
+
+            <Label
+                x:Name="titleLabel"
+                Text="Student"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="fullNameEntry"
+                Placeholder="Full name" />
+
+            <Entry
+                x:Name="facultyEntry"
+                Placeholder="Faculty" />
+
+            <Entry
+                x:Name="departmentEntry"
+                Placeholder="Department" />
+
+            <Entry
+                x:Name="courseEntry"
+                Placeholder="Course"
+                Keyboard="Numeric" />
+
+            <Entry
+                x:Name="groupEntry"
+                Placeholder="Group" />
+
+            <Label
+                Text="Subjects"
+                FontSize="18"
+                FontAttributes="Bold" />
+
+            <Entry
+                x:Name="subjectNameEntry"
+                Placeholder="Subject name" />
+
+            <Entry
+                x:Name="gradeEntry"
+                Placeholder="Grade"
+                Keyboard="Numeric" />
+
+            <Button
+                Text="Add subject"
+                Clicked="OnAddSubjectClicked" />
+
+            <CollectionView x:Name="subjectsCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            ColumnDefinitions="*,80"
+                            Padding="5">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="{Binding Name}" />
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Grade}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <HorizontalStackLayout Spacing="10">
+
+                <Button
+                    Text="Save"
+                    Clicked="OnSaveClicked" />
+
+                <Button
+                    Text="Cancel"
+                    Clicked="OnCancelClicked" />
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

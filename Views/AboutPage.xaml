@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="StudentPerformanceJson.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="About">
+
+    <VerticalStackLayout Padding="25" Spacing="10">
+
+        <Label
+            Text="About"
+            FontSize="24"
+            FontAttributes="Bold" />
+
+        <Label Text="Student Performance JSON Dispatcher" />
+
+        <Label Text="Student: Лувітіна Юліанна Віталіївна" />
+
+        <Label Text="Course: 2" />
+
+        <Label Text="Group: К26" />
+
+        <Label Text="Year: 2026" />
+
+        <Label
+            Text="Application for managing student academic performance data stored in JSON format." />
+
+    </VerticalStackLayout>
+
+</ContentPage>

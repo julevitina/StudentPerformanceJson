@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="StudentPerformanceJson.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Student Performance JSON">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Label
+                Text="Student Performance JSON Dispatcher"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Button
+                    Text="Open JSON"
+                    Clicked="OnOpenJsonClicked" />
+
+                <Button
+                    Text="Save JSON"
+                    Clicked="OnSaveJsonClicked" />
+
+                <Button
+                    Text="About"
+                    Clicked="OnAboutClicked" />
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="fileLabel"
+                Text="File is not selected"
+                FontSize="12" />
+
+            <Label
+                Text="Search"
+                FontSize="18"
+                FontAttributes="Bold" />
+
+            <Entry
+                x:Name="searchEntry"
+                Placeholder="Student full name" />
+
+            <HorizontalStackLayout Spacing="10">
+
+                <Entry
+                    x:Name="departmentEntry"
+                    Placeholder="Department"
+                    WidthRequest="180" />
+
+                <Entry
+                    x:Name="courseEntry"
+                    Placeholder="Course"
+                    Keyboard="Numeric"
+                    WidthRequest="100" />
+
+                <Entry
+                    x:Name="subjectEntry"
+                    Placeholder="Subject"
+                    WidthRequest="180" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+
+                <Button
+                    Text="Search"
+                    Clicked="OnSearchClicked" />
+
+                <Button
+                    Text="Clear"
+                    Clicked="OnClearClicked" />
+
+            </HorizontalStackLayout>
+
+            <Label
+                Text="Students"
+                FontSize="18"
+                FontAttributes="Bold" />
+
+            <Grid
+                ColumnDefinitions="50,180,140,120,70,100"
+                RowDefinitions="Auto"
+                ColumnSpacing="5">
+
+                <Label
+                    Grid.Column="0"
+                    Text="ID"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Grid.Column="1"
+                    Text="Full name"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Grid.Column="2"
+                    Text="Faculty"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Grid.Column="3"
+                    Text="Department"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Grid.Column="4"
+                    Text="Course"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Grid.Column="5"
+                    Text="Group"
+                    FontAttributes="Bold" />
+
+            </Grid>
+
+            <CollectionView
+                x:Name="studentsCollection"
+                SelectionMode="Single">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            ColumnDefinitions="50,180,140,120,70,100"
+                            Padding="2"
+                            ColumnSpacing="5">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="{Binding Id}" />
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding FullName}" />
+
+                            <Label
+                                Grid.Column="2"
+                                Text="{Binding Faculty}" />
+
+                            <Label
+                                Grid.Column="3"
+                                Text="{Binding Department}" />
+
+                            <Label
+                                Grid.Column="4"
+                                Text="{Binding Course}" />
+
+                            <Label
+                                Grid.Column="5"
+                                Text="{Binding Group}" />
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <HorizontalStackLayout Spacing="10">
+
+                <Button
+                    Text="Add"
+                    Clicked="OnAddClicked" />
+
+                <Button
+                    Text="Edit"
+                    Clicked="OnEditClicked" />
+
+                <Button
+                    Text="Delete"
+                    Clicked="OnDeleteClicked" />
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
